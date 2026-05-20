@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & Accès | Auberge de la Croix Blanche</title>
+    <meta
+      name="description"
+      content="Contactez l'Auberge de la Croix Blanche à Marcilly-en-Villette. Plan d'accès, formulaire de contact et réservation par téléphone."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: "#c0a16e", hover: "#a68757" },
+              stone: { 50: "#fafaf9", 800: "#292524", 900: "#1c1917" },
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', "serif"],
+              sans: ["Lato", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .premium-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+
+    <!-- Script pour activer hCaptcha via Web3Forms -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+  </head>
+  <body
+    class="font-sans text-stone-800 bg-stone-50 selection:bg-primary selection:text-white"
+  >
+    <!-- Navigation Sticky -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 py-3"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="flex flex-col items-center">
+          <span
+            class="font-serif text-2xl font-bold text-stone-900 tracking-wider"
+            >CROIX BLANCHE</span
+          >
+          <span class="text-xs uppercase tracking-[0.2em] text-primary"
+            >Depuis 1870</span
+          >
+        </a>
+
+        <!-- Menu Desktop -->
+        <div class="hidden lg:flex space-x-8 items-center">
+          <a href="index.html" class="hover:text-primary premium-hover"
+            >Accueil</a
+          >
+          <a href="hotel.html" class="hover:text-primary premium-hover"
+            >L'Hôtel</a
+          >
+          <a href="restaurant.html" class="hover:text-primary premium-hover"
+            >Le Restaurant</a
+          >
+          <a href="contact.html" class="text-primary font-semibold">Contact</a>
+        </div>
+
+        <!-- Double CTA Desktop -->
+        <div class="hidden lg:flex space-x-4">
+          <a
+            href="https://fr.hotels.com/ho1181021344/auberge-de-la-croix-blanche-marcilly-en-villette-france/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-2.5 border-2 border-primary text-primary font-semibold rounded hover:bg-primary hover:text-white premium-hover flex items-center gap-2"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              ></path>
+            </svg>
+            Réserver une chambre
+          </a>
+          <a
+            href="tel:0238471489"
+            class="px-5 py-2.5 bg-primary text-white font-semibold rounded hover:bg-primary-hover premium-hover shadow-md hover:shadow-lg flex items-center gap-2"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              ></path>
+            </svg>
+            Réserver une table
+          </a>
+        </div>
+
+        <!-- Burger Menu Mobile -->
+        <button
+          id="mobile-menu-button"
+          class="lg:hidden p-2 text-stone-600 hover:text-primary"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu Mobile Panel -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-white border-t mt-3">
+        <div class="px-4 pt-2 pb-4 space-y-3 shadow-lg">
+          <a
+            href="index.html"
+            class="block px-3 py-2 text-stone-600 hover:text-primary"
+            >Accueil</a
+          >
+          <a
+            href="hotel.html"
+            class="block px-3 py-2 text-stone-600 hover:text-primary"
+            >L'Hôtel</a
+          >
+          <a
+            href="restaurant.html"
+            class="block px-3 py-2 text-stone-600 hover:text-primary"
+            >Le Restaurant</a
+          >
+          <a
+            href="contact.html"
+            class="block px-3 py-2 text-primary font-medium"
+            >Contact</a
+          >
+          <div class="border-t pt-3 space-y-2">
+            <a
+              href="https://fr.hotels.com/ho1181021344/auberge-de-la-croix-blanche-marcilly-en-villette-france/"
+              target="_blank"
+              class="block w-full text-center px-5 py-3 border-2 border-primary text-primary font-semibold rounded"
+              >Chambre</a
+            >
+            <a
+              href="tel:0238471489"
+              class="block w-full text-center px-5 py-3 bg-primary text-white font-semibold rounded"
+              >Table : 02 38 47 14 89</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Page -->
+    <header class="pt-32 pb-16 bg-stone-900 text-center">
+      <div class="max-w-3xl mx-auto px-4">
+        <h1 class="font-serif text-4xl md:text-5xl text-white font-bold mb-4">
+          Contact & Accès
+        </h1>
+        <p class="text-primary text-lg tracking-widest uppercase">
+          Nous trouver
+        </p>
+      </div>
+    </header>
+
+    <section class="py-20 min-h-screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Informations & Map -->
+          <div>
+            <h2 class="font-serif text-3xl mb-6 text-stone-900">Coordonnées</h2>
+
+            <div class="space-y-6 mb-8 text-lg">
+              <p class="flex items-start gap-4">
+                <svg
+                  class="w-6 h-6 text-primary flex-shrink-0 mt-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+                <span
+                  >118 place de l'Eglise<br />45240 Marcilly-en-Villette<br /><span
+                    class="text-sm text-stone-500"
+                    >(À 20 Km au sud d'Orléans)</span
+                  ></span
+                >
+              </p>
+              <p class="flex items-center gap-4">
+                <svg
+                  class="w-6 h-6 text-primary flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  ></path>
+                </svg>
+                <a href="tel:0238471489" class="hover:text-primary font-bold"
+                  >02 38 47 14 89</a
+                >
+              </p>
+              <p class="flex items-center gap-4">
+                <svg
+                  class="w-6 h-6 text-primary flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <a
+                  href="mailto:reservation@aubergedelacroixblanche.fr"
+                  class="hover:text-primary"
+                  >reservation@aubergedelacroixblanche.fr</a
+                >
+              </p>
+            </div>
+
+            <!-- Carte Iframe -->
+            <div class="rounded-lg overflow-hidden shadow-md h-64 w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2681.4284562016335!2d1.9392273!3d47.7732297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e4eb1783582ab3%3A0x600f6b4d32049e0!2s118%20Pl.%20de%20l'Eglise%2C%2045240%20Marcilly-en-Villette!5e0!3m2!1sfr!2sfr!4v1715000000000!5m2!1sfr!2sfr"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Formulaire de contact via Web3Forms -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg border border-stone-100"
+          >
+            <h2 class="font-serif text-3xl mb-6 text-stone-900">
+              Écrivez-nous
+            </h2>
+
+            <form
+              id="contact-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              class="space-y-4"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="YOUR_ACCESS_KEY_HERE"
+              />
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    for="prenom"
+                    class="block text-sm font-medium text-stone-700 mb-1"
+                    >Prénom</label
+                  >
+                  <input
+                    type="text"
+                    id="prenom"
+                    name="Prenom"
+                    required
+                    class="w-full px-4 py-2 border border-stone-300 rounded focus:ring-primary focus:border-primary outline-none transition"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="nom"
+                    class="block text-sm font-medium text-stone-700 mb-1"
+                    >Nom</label
+                  >
+                  <input
+                    type="text"
+                    id="nom"
+                    name="Nom"
+                    required
+                    class="w-full px-4 py-2 border border-stone-300 rounded focus:ring-primary focus:border-primary outline-none transition"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-stone-700 mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="Email"
+                  required
+                  class="w-full px-4 py-2 border border-stone-300 rounded focus:ring-primary focus:border-primary outline-none transition"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="telephone"
+                  class="block text-sm font-medium text-stone-700 mb-1"
+                  >Téléphone</label
+                >
+                <input
+                  type="tel"
+                  id="telephone"
+                  name="Telephone"
+                  class="w-full px-4 py-2 border border-stone-300 rounded focus:ring-primary focus:border-primary outline-none transition"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-stone-700 mb-1"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="Message"
+                  rows="4"
+                  required
+                  class="w-full px-4 py-2 border border-stone-300 rounded focus:ring-primary focus:border-primary outline-none transition resize-none"
+                ></textarea>
+              </div>
+
+              <!-- Web3Forms Honeypot pour contrer les bots sans embêter l'utilisateur -->
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="hidden"
+                style="display: none"
+              />
+
+              <!-- Widget hCaptcha centré -->
+              <div class="w-full flex justify-center mt-4 mb-2">
+                <div class="h-captcha" data-captcha="true"></div>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-button"
+                class="w-full bg-stone-900 text-white font-bold py-3 px-4 rounded hover:bg-primary premium-hover shadow-md mt-4 flex justify-center items-center transition-all duration-300"
+              >
+                <span>Envoyer le message</span>
+              </button>
+              <p class="text-xs text-stone-400 mt-3 text-center">
+                Pour réserver une table, merci de privilégier le téléphone.
+              </p>
+
+              <!-- Message de retour (caché par défaut) -->
+              <div
+                id="form-result"
+                class="hidden mt-4 p-4 rounded text-center font-medium text-sm transition-all duration-300"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-300 py-12">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8"
+      >
+        <div>
+          <h4 class="font-serif text-xl text-white mb-4">
+            Auberge de la Croix Blanche
+          </h4>
+          <p class="mb-2">118 place de l'Eglise</p>
+          <p>45240 Marcilly-en-Villette</p>
+        </div>
+        <div>
+          <h4 class="font-serif text-xl text-white mb-4">Contact</h4>
+          <p class="mb-2">
+            Tél:
+            <a href="tel:0238471489" class="hover:text-primary transition"
+              >02 38 47 14 89</a
+            >
+          </p>
+          <p>
+            Email:
+            <a
+              href="mailto:reservation@aubergedelacroixblanche.fr"
+              class="hover:text-primary transition"
+              >reservation@aubergedelacroixblanche.fr</a
+            >
+          </p>
+        </div>
+        <div>
+          <h4 class="font-serif text-xl text-white mb-4">
+            Horaires Restaurant
+          </h4>
+          <p class="mb-2">Ouvert midi et soir</p>
+          <p>Du Jeudi au Lundi</p>
+        </div>
+      </div>
+      <div class="text-center mt-12 border-t border-stone-800 pt-8 text-sm">
+        <p>&copy; 2024 Auberge de la Croix Blanche. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <!-- Script JS -->
+    <script>
+      const btn = document.getElementById("mobile-menu-button");
+      const menu = document.getElementById("mobile-menu");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          nav.classList.add("py-1", "shadow-md");
+          nav.classList.remove("py-3", "shadow-sm");
+        } else {
+          nav.classList.add("py-3", "shadow-sm");
+          nav.classList.remove("py-1", "shadow-md");
+        }
+      });
+
+      // Gestion du formulaire en AJAX (sans rechargement de page)
+      const form = document.getElementById("contact-form");
+      const result = document.getElementById("form-result");
+      const submitButton = document.getElementById("submit-button");
+      const buttonText = submitButton.querySelector("span");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Empêche le rechargement classique de la page
+
+        // 1. État de chargement visuel
+        buttonText.textContent = "Envoi en cours...";
+        submitButton.classList.add("opacity-75", "cursor-not-allowed");
+        submitButton.disabled = true;
+
+        // 2. Récupération des données du formulaire
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        // 3. Envoi au service via JavaScript (Fetch API)
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: json,
+        })
+          .then(async (response) => {
+            let jsonResponse = await response.json();
+            if (response.status == 200) {
+              // Succès : Message vert
+              result.classList.remove("hidden", "bg-red-100", "text-red-700");
+              result.classList.add("bg-green-100", "text-green-700");
+              result.innerHTML = "Merci ! Votre message a bien été envoyé.";
+              form.reset(); // On vide les champs du formulaire
+            } else {
+              // Erreur serveur : Message rouge
+              result.classList.remove(
+                "hidden",
+                "bg-green-100",
+                "text-green-700",
+              );
+              result.classList.add("bg-red-100", "text-red-700");
+              result.innerHTML =
+                jsonResponse.message ||
+                "Une erreur s'est produite lors de l'envoi.";
+            }
+          })
+          .catch((error) => {
+            // Erreur de connexion : Message rouge
+            result.classList.remove("hidden", "bg-green-100", "text-green-700");
+            result.classList.add("bg-red-100", "text-red-700");
+            result.innerHTML =
+              "Erreur de connexion. Veuillez vérifier votre réseau.";
+          })
+          .then(function () {
+            // 4. Restaurer le bouton dans tous les cas (succès ou erreur)
+            buttonText.textContent = "Envoyer le message";
+            submitButton.classList.remove("opacity-75", "cursor-not-allowed");
+            submitButton.disabled = false;
+
+            // Cacher le message de succès/erreur après 6 secondes
+            setTimeout(() => {
+              result.classList.add("hidden");
+            }, 6000);
+          });
+      });
+    </script>
+  </body>
+</html>

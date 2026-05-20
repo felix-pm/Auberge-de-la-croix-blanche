@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L'Hôtel | Auberge de la Croix Blanche</title>
+    <meta
+      name="description"
+      content="Découvrez nos 7 chambres de charme en plein cœur de la Sologne. Confort, calme et authenticité à Marcilly-en-Villette."
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: "#c0a16e", hover: "#a68757" },
+              stone: { 50: "#fafaf9", 800: "#292524", 900: "#1c1917" },
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', "serif"],
+              sans: ["Lato", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .premium-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+  </head>
+  <body
+    class="font-sans text-stone-800 bg-stone-50 selection:bg-primary selection:text-white"
+  >
+    <!-- Navigation Sticky -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 py-3"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="flex flex-col items-center">
+          <span
+            class="font-serif text-2xl font-bold text-stone-900 tracking-wider"
+            >CROIX BLANCHE</span
+          >
+          <span class="text-xs uppercase tracking-[0.2em] text-primary"
+            >Depuis 1870</span
+          >
+        </a>
+
+        <!-- Menu Desktop -->
+        <div class="hidden lg:flex space-x-8 items-center">
+          <a href="index.html" class="hover:text-primary premium-hover"
+            >Accueil</a
+          >
+          <a href="hotel.html" class="text-primary font-semibold">L'Hôtel</a>
+          <a href="restaurant.html" class="hover:text-primary premium-hover"
+            >Le Restaurant</a
+          >
+          <a href="contact.html" class="hover:text-primary premium-hover"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Double CTA Desktop -->
+        <div class="hidden lg:flex space-x-4">
+          <a
+            href="https://fr.hotels.com/ho1181021344/auberge-de-la-croix-blanche-marcilly-en-villette-france/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-2.5 border-2 border-primary text-primary font-semibold rounded hover:bg-primary hover:text-white premium-hover flex items-center gap-2"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              ></path>
+            </svg>
+            Réserver une chambre
+          </a>
+          <a
+            href="tel:0238471489"
+            class="px-5 py-2.5 bg-primary text-white font-semibold rounded hover:bg-primary-hover premium-hover shadow-md hover:shadow-lg flex items-center gap-2"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              ></path>
+            </svg>
+            Réserver une table
+          </a>
+        </div>
+
+        <!-- Burger Menu Mobile -->
+        <button
+          id="mobile-menu-button"
+          class="lg:hidden p-2 text-stone-600 hover:text-primary"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu Mobile Panel -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-white border-t mt-3">
+        <div class="px-4 pt-2 pb-4 space-y-3 shadow-lg">
+          <a
+            href="index.html"
+            class="block px-3 py-2 text-stone-600 hover:text-primary"
+            >Accueil</a
+          >
+          <a href="hotel.html" class="block px-3 py-2 text-primary font-medium"
+            >L'Hôtel</a
+          >
+          <a
+            href="restaurant.html"
+            class="block px-3 py-2 text-stone-600 hover:text-primary"
+            >Le Restaurant</a
+          >
+          <a
+            href="contact.html"
+            class="block px-3 py-2 text-stone-600 hover:text-primary"
+            >Contact</a
+          >
+          <div class="border-t pt-3 space-y-2">
+            <a
+              href="https://fr.hotels.com/ho1181021344/auberge-de-la-croix-blanche-marcilly-en-villette-france/"
+              target="_blank"
+              class="block w-full text-center px-5 py-3 border-2 border-primary text-primary font-semibold rounded"
+              >Chambre</a
+            >
+            <a
+              href="tel:0238471489"
+              class="block w-full text-center px-5 py-3 bg-primary text-white font-semibold rounded"
+              >Table : 02 38 47 14 89</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Page -->
+    <header
+      class="pt-32 pb-16 bg-stone-900 text-center relative overflow-hidden"
+    >
+      <div class="relative z-10 max-w-3xl mx-auto px-4">
+        <h1 class="font-serif text-4xl md:text-5xl text-white font-bold mb-4">
+          Un Repos Chaleureux
+        </h1>
+        <p class="text-primary text-lg tracking-widest uppercase">
+          7 Chambres de Charme
+        </p>
+      </div>
+    </header>
+
+    <!-- Contenu -->
+    <section class="py-20 min-h-screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <p class="text-xl text-stone-600 leading-relaxed">
+            L'Auberge de la Croix Blanche vous propose 7 chambres authentiques
+            alliant le charme de l'ancien au confort d'aujourd'hui. Literie de
+            qualité, décoration soignée aux tons solognots, c'est l'endroit
+            idéal pour une halte romantique ou un séjour reposant.
+          </p>
+        </div>
+
+        <!-- Galerie / Grille de présentation -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <img
+            src="./assets/img-hotel.webp"
+            alt="Chambre confortable"
+            class="w-full h-72 object-cover rounded shadow-md"
+          />
+          <img
+            src="./assets/img-hotel2.webp"
+            alt="Détail décoration"
+            class="w-full h-72 object-cover rounded shadow-md"
+          />
+          <img
+            src="./assets/img-hotel3.webp"
+            alt="Salle de bain élégante"
+            class="w-full h-72 object-cover rounded shadow-md md:col-span-2 lg:col-span-1"
+          />
+        </div>
+
+        <!-- Big CTA -->
+        <div
+          class="bg-white p-10 rounded-xl shadow-xl text-center border-t-4 border-primary max-w-4xl mx-auto"
+        >
+          <h3 class="font-serif text-3xl mb-4 text-stone-900">
+            Vérifier nos disponibilités
+          </h3>
+          <p class="text-stone-600 mb-8">
+            Nous gérons nos réservations hôtelières via notre partenaire de
+            confiance pour vous garantir le meilleur service.
+          </p>
+
+          <a
+            href="https://fr.hotels.com/ho1181021344/auberge-de-la-croix-blanche-marcilly-en-villette-france/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-lg font-bold rounded shadow-lg hover:bg-primary-hover hover:scale-105 premium-hover w-full sm:w-auto"
+          >
+            Voir les disponibilités sur Hotels.com
+            <svg
+              class="w-6 h-6 ml-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-300 py-12">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8"
+      >
+        <div>
+          <h4 class="font-serif text-xl text-white mb-4">
+            Auberge de la Croix Blanche
+          </h4>
+          <p class="mb-2">118 place de l'Eglise</p>
+          <p>45240 Marcilly-en-Villette</p>
+        </div>
+        <div>
+          <h4 class="font-serif text-xl text-white mb-4">Contact</h4>
+          <p class="mb-2">
+            Tél:
+            <a href="tel:0238471489" class="hover:text-primary transition"
+              >02 38 47 14 89</a
+            >
+          </p>
+          <p>
+            Email:
+            <a
+              href="mailto:reservation@aubergedelacroixblanche.fr"
+              class="hover:text-primary transition"
+              >reservation@aubergedelacroixblanche.fr</a
+            >
+          </p>
+        </div>
+        <div>
+          <h4 class="font-serif text-xl text-white mb-4">
+            Horaires Restaurant
+          </h4>
+          <p class="mb-2">Ouvert midi et soir</p>
+          <p>Du Jeudi au Lundi</p>
+        </div>
+      </div>
+      <div class="text-center mt-12 border-t border-stone-800 pt-8 text-sm">
+        <p>&copy; 2024 Auberge de la Croix Blanche. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <!-- Script JS -->
+    <script>
+      const btn = document.getElementById("mobile-menu-button");
+      const menu = document.getElementById("mobile-menu");
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          nav.classList.add("py-1", "shadow-md");
+          nav.classList.remove("py-3", "shadow-sm");
+        } else {
+          nav.classList.add("py-3", "shadow-sm");
+          nav.classList.remove("py-1", "shadow-md");
+        }
+      });
+    </script>
+  </body>
+</html>
