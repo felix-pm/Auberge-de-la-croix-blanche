@@ -1,0 +1,9 @@
+# Exports Claude Design (sources de référence, non publiées)
+*.zip
+
+# Système / éditeurs
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
