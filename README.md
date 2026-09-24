@@ -14,6 +14,21 @@ js/main.js              Carrousel du hero, menu mobile, lien actif de la navigat
 images/                 Photos et logos
 ```
 
+## Animations
+
+Pilotées par des attributs HTML, sans bibliothèque :
+
+| Attribut | Effet |
+|---|---|
+| `data-reveal` | Apparition en fondu vers le haut quand l'élément entre à l'écran |
+| `data-reveal="mask"` | Photo dévoilée de bas en haut |
+| `data-reveal="ornament"` | Ornement qui se dessine depuis son losange central |
+| `data-reveal="zoom"` / `"fade"` | Apparition par léger zoom / simple fondu |
+| `data-parallax="0.06"` | Parallaxe : positif = premier plan, négatif = arrière-plan (`data-parallax-max` = décalage maximum en px, 60 par défaut) |
+| `data-magnetic` | Bouton légèrement attiré par le curseur |
+
+Les éléments qui apparaissent ensemble s'enchaînent automatiquement en cascade. Parallaxe et effets de curseur ne s'activent que sur grand écran avec souris ; tout est désactivé si le visiteur a demandé moins d'animations dans son système (`prefers-reduced-motion`).
+
 ## Voir le site en local
 
 Ouvrir `index.html` directement dans un navigateur, ou lancer un petit serveur :

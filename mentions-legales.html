@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  /* Active les animations d'apparition ; si main.js n'est pas chargé à temps, le contenu reste visible. */
+  (function (h) { h.classList.add('js'); setTimeout(function () { if (!h.classList.contains('js-ready')) h.classList.remove('js'); }, 3000); })(document.documentElement);
+</script>
 <title>Mentions légales — Auberge de la Croix Blanche</title>
 <meta name="description" content="Mentions légales, politique de confidentialité et crédits du site de l'Auberge de la Croix Blanche, Marcilly-en-Villette.">
 <meta name="robots" content="noindex, follow">
@@ -31,16 +35,16 @@
       <a href="index.html#contact">Contact</a>
       <a class="btn btn--outline nav__call" href="tel:+33238471489"><svg class="icon"><use href="#i-phone"/></svg>02 38 47 14 89</a>
     </nav>
-    <a class="btn btn--outline navbar__call" href="tel:+33238471489"><svg class="icon"><use href="#i-phone"/></svg>02 38 47 14 89</a>
+    <a class="btn btn--outline navbar__call" data-magnetic href="tel:+33238471489"><svg class="icon"><use href="#i-phone"/></svg>02 38 47 14 89</a>
     <button class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main id="contenu">
   <section class="page-banner">
-    <span class="kicker kicker--gold">Informations</span>
-    <svg class="ornament ornament--gold" aria-hidden="true"><use href="#i-ornament"/></svg>
-    <h1 class="title">Mentions légales</h1>
+    <span data-reveal class="kicker kicker--gold">Informations</span>
+    <svg data-reveal="ornament" class="ornament ornament--gold" aria-hidden="true"><use href="#i-ornament"/></svg>
+    <h1 data-reveal class="title">Mentions légales</h1>
   </section>
 
   <article class="legal">
